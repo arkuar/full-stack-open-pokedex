@@ -32,4 +32,7 @@ jobs:
           heroku_api_key: ${{secrets.HEROKU_API_KEY}}
           heroku_app_name: arkuar-cicdpokedex
           heroku_email: arttukuronen@gmail.com
+          healthcheck: https://arkuar-cicdpokedex.herokuapp.com/health
+          checkstring: "ok"
+          rollbackonhealthcheckfailed: true
         
