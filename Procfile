@@ -1,1 +1,1 @@
-web: npm run invalidscript
+web: npm run start-prod
