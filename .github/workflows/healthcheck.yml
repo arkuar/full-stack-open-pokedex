@@ -1,0 +1,19 @@
+name: Periodic health check
+
+on:
+  push:
+    branches:
+      - master
+  # schedule:
+  #   - cron: '*/15 * * * *'
+
+jobs:
+  healtcheck:
+    runs-on: ubuntu-18.04
+    steps:
+      - name: Check the deployed service URL
+        uses: jtalk/url-health-check-action@v1.4
+        with:
+          url: https://arkuar-cicdpokedex.herokuapp.com/health
+          max-attempts: 3
+          retry-delay: 5s
